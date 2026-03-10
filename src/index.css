@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-accent: #39FF14;
+  --color-bg-dark: #0D0D0D;
+  --color-card: rgba(255, 255, 255, 0.05);
+  --color-border: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-bg-dark text-white font-sans selection:bg-accent selection:text-black;
+  }
+}
+
+.glass {
+  @apply backdrop-blur-xl bg-white/5 border border-white/10;
+}
+
+.jetbrains-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.neon-glow {
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.markdown-body h1 { @apply text-3xl font-bold mb-6 mt-8 text-accent; }
+.markdown-body h2 { @apply text-2xl font-semibold mb-4 mt-6 border-b border-white/10 pb-2; }
+.markdown-body h3 { @apply text-xl font-medium mb-3 mt-5; }
+.markdown-body p { @apply mb-4 leading-relaxed text-gray-300; }
+.markdown-body ul { @apply list-disc pl-6 mb-4 space-y-2 text-gray-300; }
+.markdown-body ol { @apply list-decimal pl-6 mb-4 space-y-2 text-gray-300; }
+.markdown-body li { @apply mb-1; }
+.markdown-body strong { @apply text-white font-semibold; }
+.markdown-body blockquote { @apply border-l-4 border-accent bg-white/5 p-4 italic mb-4 rounded-r-lg; }
